@@ -1,6 +1,6 @@
-[rcm-tools-fedora-35-rpms]
-name=RCM Tools for Fedora 35 (RPMs)
-baseurl=http://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-F-35/compose/Everything/$basearch/os/
+[rcm-tools-fedora-42-rpms]
+name=RCM Tools for Fedora 42 (RPMs)
+baseurl=http://download.devel.redhat.com/rel-eng/RCMTOOLS/latest-RCMTOOLS-2-F-42/compose/Everything/$basearch/os/
 enabled=1
 gpgcheck=0
 skip_if_unavailable=True
