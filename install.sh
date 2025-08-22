@@ -29,7 +29,6 @@ if [ ! -e /proc/sys/net/ipv4/conf/tun0 ]; then
   sudo nmcli connection reload
   sudo nmcli c up Raleigh\ \(RDU2\) --ask
 fi
-
 if [ ! $(grep -qi rawhide /etc/redhat-release) ] && [ installl_rawhide == 1 ]; then
     sudo dnf system-upgrade download --refresh --releasever=rawhide --nogpgcheck
     cd /etc/pki/rpm-gpg/
@@ -67,10 +66,10 @@ else
     fi
 #    sudo dnf config-manager --add-repo=https://negativo17.org/repos/fedora-nvidia.repo
     sudo yum install -y rhpkg
-    sudo yum install -y gdm terminator vim google-chrome google-chrome-unstable slack vlc hexchat thunderbird rdesktop virt-manager rpm-build gcc dbus-glib-devel gtk2-devel iso-codes-devel pciutils-devel lua-devel openssl-devel ntpdate ntp git-review nicotine+ transmission linphone sshuttle libvirt-client VirtualBox vinagre net-snmp net-snmp-utils icedtea-web tmux screen libnsl shairport-sync dnf-utils yum-utils nmap strace uptimed xdotool python3-reno libguestfs-tools python2-pyxattr python-pep8 python3-tox libpq-devel collectl mysql-server gimp meson perl-devel perl-ExtUtils-Embed libcanberra-devel dbus-glib-devel libnotify-devel libproxy-devel python3-devel python3-koji krb5-workstation koji npm chrome-gnome-shell nvidia-driver nvidia-settings flex ncurses-devel bison rdopkg oidentd alsa-lib-devel cargo hunspell-devel libXt-devel libcurl-devel llvm-devel nasm nss-devel nspr-devel nss-static pulseaudio-libs-devel rust startup-notification-devel yasm cups libvirt virt-viewer firefox lm_sensors alsa-utils pavucontrol pulseaudio-utils gedit libreoffice xorg-x11-xfs-utils xorg-x11-xfs gnome-themes gdb libselinux-python libsemanage-python ansible facter hiera gnome-extensions-app snapd gnome-tweaks perf gtkglext-libs wine-core iotop yubikey-personalization-gui chromium --skip-broken --skip-unavailable --nogpgcheck
+    sudo yum install -y gdm terminator vim google-chrome google-chrome-unstable slack vlc hexchat thunderbird rdesktop virt-manager rpm-build gcc dbus-glib-devel gtk2-devel iso-codes-devel pciutils-devel lua-devel openssl-devel ntpdate ntp git-review nicotine+ transmission linphone sshuttle libvirt-client VirtualBox vinagre net-snmp net-snmp-utils icedtea-web tmux screen libnsl shairport-sync dnf-utils yum-utils nmap strace uptimed xdotool python3-reno libguestfs-tools python2-pyxattr python-pep8 python3-tox libpq-devel collectl mysql-server gimp meson perl-devel perl-ExtUtils-Embed libcanberra-devel dbus-glib-devel libnotify-devel libproxy-devel python3-devel python3-koji krb5-workstation koji npm chrome-gnome-shell nvidia-driver nvidia-settings flex ncurses-devel bison rdopkg oidentd alsa-lib-devel cargo hunspell-devel libXt-devel libcurl-devel llvm-devel nasm nss-devel nspr-devel nss-static pulseaudio-libs-devel rust startup-notification-devel yasm cups libvirt virt-viewer firefox lm_sensors alsa-utils pavucontrol pulseaudio-utils gedit libreoffice xorg-x11-xfs-utils xorg-x11-xfs gnome-themes gdb libselinux-python libsemanage-python ansible facter hiera gnome-extensions-app snapd gnome-tweaks perf gtkglext-libs wine-core iotop yubikey-personalization-gui chromium simple-scan --skip-broken --skip-unavailable --nogpgcheck
     if !$( rpm -qa | grep -q anydesk) ; then
       sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_6.2.0-1_x86_64.rpm
-    then
+    fi
     if !$( rpm -qa | grep -q jenkins) ; then
       sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
       sudo rpm --import -y https://pkg.jenkins.io/redhat/jenkins.io.key
