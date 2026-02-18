@@ -1,5 +1,7 @@
-yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session
+timedatectl set-timezone America/Montreal
+hostnamectl set-hostname moriarty.orion
 
+yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session
 rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
 find /home/dhill_restore/ -depth -type d -empty -delete
 
@@ -28,7 +30,6 @@ firewall-cmd --zone=FedoraServer --add-port=161/tcp --permanent
 firewall-cmd --zone=internal --add-port=161/udp --permanent
 firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
 firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
-
 
 
 snap install whatsdesk
