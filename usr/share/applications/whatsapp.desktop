@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=Whatsapp
+Comment=Whatsapp
+Exec=/var/lib/snapd/snap/whatsdesk/current/whatsdesk
+Icon=whatsapp
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=Whatsdesk
+Encoding=UTF-8
+Categories=Network;Application;
+MimeType=x-scheme-handler/skype;x-scheme-handler/tel;x-scheme-handler/callto;
+X-KDE-Protocols=whatsdesk,tel,callto
+Actions=QuitWhatsdesk;
+
+[Desktop Action QuitWhatsdesk]
+Name=Quit Whatsdesk
+Exec=/var/lib/snapd/snap/whatsdesk/current/whatsdesk
+OnlyShowIn=Unity;
+
