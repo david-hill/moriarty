@@ -7,47 +7,47 @@ sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 
 if ! rpm -qi virt-manager > /dev/null; then
-  yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager
+  sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager
 fi
 if [ -d /home/dhill_restore ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
   find /home/dhill_restore/ -depth -type d -empty -delete
 fi
 
-cp etc/gdm/* /etc/gdm/
-cp etc/snmp/* /etc/snmp/
-cp etc/libvirt/libvirtd.conf /etc/libvirt
+sudo cp etc/gdm/* /etc/gdm/
+sudo cp etc/snmp/* /etc/snmp/
+sudo cp etc/libvirt/libvirtd.conf /etc/libvirt
 
-systemctl enable snapd
-systemctl start snapd
-systemctl enable snmpd
-systemctl start snmpd
-systemctl enable shairport-sync
-systemctl start shairport-sync
-systemctl restart libvirtd
+sudo systemctl enable snapd
+sudo systemctl start snapd
+sudo systemctl enable snmpd
+sudo systemctl start snmpd
+sudo systemctl enable shairport-sync
+sudo systemctl start shairport-sync
+sudo systemctl restart libvirtd
 
 if ! firewall-cmd --zone=internal --permanent --list-all | grep -q snmp; then
-  firewall-cmd --zone=internal --add-service ssh --permanent
-  firewall-cmd --zone=FedoraWorkstation --add-service ssh --permanent
-  firewall-cmd --zone=internal --add-service snmp --permanent
-  firewall-cmd --zone=FedoraWorkstation --add-service snmp --permanent
-  firewall-cmd --zone=internal --add-port=113/tcp --permanent
-  firewall-cmd --zone=FedoraWorkstation --add-port=113/tcp --permanent
-  firewall-cmd --zone=internal --add-port=161/tcp --permanent
-  firewall-cmd --zone=FedoraWorkstation --add-port=161/tcp --permanent
-  firewall-cmd --zone=FedoraServer --add-port=161/tcp --permanent
-  firewall-cmd --zone=internal --add-port=161/udp --permanent
-  firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
-  firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
+  sudo firewall-cmd --zone=internal --add-service ssh --permanent
+  sudo firewall-cmd --zone=FedoraWorkstation --add-service ssh --permanent
+  sudo firewall-cmd --zone=internal --add-service snmp --permanent
+  sudo firewall-cmd --zone=FedoraWorkstation --add-service snmp --permanent
+  sudo firewall-cmd --zone=internal --add-port=113/tcp --permanent
+  sudo firewall-cmd --zone=FedoraWorkstation --add-port=113/tcp --permanent
+  sudo firewall-cmd --zone=internal --add-port=161/tcp --permanent
+  sudo firewall-cmd --zone=FedoraWorkstation --add-port=161/tcp --permanent
+  sudo firewall-cmd --zone=FedoraServer --add-port=161/tcp --permanent
+  sudo firewall-cmd --zone=internal --add-port=161/udp --permanent
+  sudo firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
+  sudo firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
 fi
 
 if ! snap info whatsdesk >/dev/null; then
-  snap install whatsdesk
+  sudo snap install whatsdesk
 fi
 
-cp /var/lib/snapd/snap/whatsdesk/current/meta/gui/icon.png /usr/share/pixmaps/whatsapp.png
-cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp.desktop
-cp usr/share/applications/whatsapp.desktop /home/dhill/.config/autostart
+sudo cp /var/lib/snapd/snap/whatsdesk/current/meta/gui/icon.png /usr/share/pixmaps/whatsapp.png
+sudo cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp.desktop
+sudo cp usr/share/applications/whatsapp.desktop /home/dhill/.config/autostart
 
 if ! rpm -qi brscan3 > /dev/null; then
   cd rpms
@@ -77,7 +77,7 @@ if ! rpm -qa | grep -iq anydesk; then
 fi
 
 if ! rpm -qi jenkins > /dev/null; then
-  wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/rpm/jenkins.repo
-  yum install -y jenkins
+  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/rpm/jenkins.repo
+  sudo yum install -y jenkins
 fi
 
