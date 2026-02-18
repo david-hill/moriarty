@@ -28,7 +28,7 @@ else
     sudo timedatectl set-timezone America/Montreal
     sudo hostnamectl set-hostname knox.orion
     sudo yum install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-rawhide.noarch.rpm
-    sudo yum install -y https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.11/ringcentral-community-app-0.0.11.x86_64.rpm
+    sudo yum install -y https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm
     sudo yum install -y https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-rawhide.noarch.rpm
     sudo yum install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
     sudo yum install -y https://binaries.webex.com/WebexDesktop-CentOS-Official-Package/Webex.rpm --nogpgcheck
