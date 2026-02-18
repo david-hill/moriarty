@@ -56,20 +56,20 @@ if ! rpm -qi brscan3 > /dev/null; then
   rm -rf tmp
 fi
 
-if ! rpm -qa | grep -q zoom ; then
+if ! rpm -qa | grep -iq zoom ; then
   sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
 fi
 
-if ! rpm -qa | grep -q ringcentral; then
+if ! rpm -qa | grep -iq ringcentral; then
   sudo yum install -y https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm
 fi
-if ! rpm -qa | grep -i teamviewer; then
+if ! rpm -qa | grep -iq teamviewer; then
   sudo yum install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 fi
-if ! rpm -qa | grep -i webex; then
+if ! rpm -qa | grep -iq webex; then
   sudo yum install -y https://binaries.webex.com/WebexDesktop-CentOS-Official-Package/Webex.rpm --nogpgcheck
 fi
-if ! rpm -qa | grep -q anydesk; then
+if ! rpm -qa | grep -iq anydesk; then
   sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.4-1_x86_64.rpm
 fi
 
