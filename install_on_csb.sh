@@ -4,6 +4,8 @@ hostnamectl set-hostname moriarty.orion
 sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
 sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
+dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
+
 if ! rpm -qi virt-manager > /dev/null; then
   yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager
 fi
