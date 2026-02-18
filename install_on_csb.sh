@@ -55,7 +55,7 @@ if !$( rpm -qa | grep -q zoom ); then
   sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
 fi
 
-if ! $( rpm -qa | grep -q ringcentral ); then
+if !$( rpm -qa | grep -q ringcentral ); then
   sudo yum install -y https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm
 fi
 if !$(rpm -qa | grep -i teamviewer); then
