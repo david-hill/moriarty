@@ -44,6 +44,20 @@ chmod 755 tmp/linux-brprinter-installer-2.2.0-1
 echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
 rm -rf tmp
 
-remotepackages="https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.4-1_x86_64.rpm"
+if !$( rpm -qa | grep -q zoom ); then
+  sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
+fi
 
-yum install -y remotepackages
+if ! $( rpm -qa | grep -q ringcentral ); then
+  sudo yum install -y https://github.com/ringcentral/ringcentral-community-app/releases/download/v0.0.12/ringcentral-community-app-0.0.12.x86_64.rpm
+fi
+if !$(rpm -qa | grep -i teamviewer); then
+  sudo yum install -y https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
+fi
+if !$( rpm -qa | grep -i webex ); then
+  sudo yum install -y https://binaries.webex.com/WebexDesktop-CentOS-Official-Package/Webex.rpm --nogpgcheck
+fi
+if !$( rpm -qa | grep -q anydesk) ; then
+  sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.3-1_x86_64.rpm
+fi
+
