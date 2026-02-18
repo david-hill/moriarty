@@ -4,7 +4,7 @@ hostnamectl set-hostname moriarty.orion
 sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
 sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
-yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils
+yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686
 if [ -d /home/dhill_restore ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
   find /home/dhill_restore/ -depth -type d -empty -delete
