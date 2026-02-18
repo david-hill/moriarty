@@ -67,6 +67,6 @@ if ! rpm -qa | grep -i webex; then
   sudo yum install -y https://binaries.webex.com/WebexDesktop-CentOS-Official-Package/Webex.rpm --nogpgcheck
 fi
 if ! rpm -qa | grep -q anydesk; then
-  sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.3-1_x86_64.rpm
+  sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.4-1_x86_64.rpm
 fi
 
