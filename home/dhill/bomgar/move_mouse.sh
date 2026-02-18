@@ -12,7 +12,7 @@
 LENGTH=20
 #
 # Set DELAY to the desired number of seconds between each move of the mouse pointer.
-DELAY=60
+DELAY=2
 #
 while true
 do
@@ -20,6 +20,7 @@ do
   do
     echo $ANGLE
     xdotool mousemove_relative --polar $ANGLE $LENGTH
+    xdotool click 1
     sleep $DELAY
   done
 done
