@@ -1,7 +1,7 @@
 timedatectl set-timezone America/Montreal
 hostnamectl set-hostname moriarty.orion
 
-yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs
+yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat
 rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
 find /home/dhill_restore/ -depth -type d -empty -delete
 
