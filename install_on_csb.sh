@@ -1,4 +1,4 @@
-yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp
+yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable
 
 rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
 
