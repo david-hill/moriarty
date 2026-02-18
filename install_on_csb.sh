@@ -1,6 +1,10 @@
 timedatectl set-timezone America/Montreal
 hostnamectl set-hostname moriarty.orion
 
+dhill@moriarty:/etc/ansible$ grep -r moriarty *
+sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
+sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
+
 yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat
 rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
 find /home/dhill_restore/ -depth -type d -empty -delete
