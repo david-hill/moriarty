@@ -74,3 +74,8 @@ if ! rpm -qa | grep -iq anydesk; then
   sudo rpm -ivh --nodeps http://rpm.anydesk.com/fedora/x86_64/Packages/anydesk_7.1.4-1_x86_64.rpm
 fi
 
+if ! rpm -qi jenkins > /dev/null; then
+  wget -O /etc/repos.d/jenkins.repo https://pkg.jenkins.io/rpm/jenkins.repo
+  yum install -y jenkins
+fi
+
