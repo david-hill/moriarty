@@ -1,7 +1,6 @@
 timedatectl set-timezone America/Montreal
 hostnamectl set-hostname moriarty.orion
 
-dhill@moriarty:/etc/ansible$ grep -r moriarty *
 sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
 sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
