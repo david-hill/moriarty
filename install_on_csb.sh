@@ -75,7 +75,7 @@ if ! rpm -qa | grep -iq anydesk; then
 fi
 
 if ! rpm -qi jenkins > /dev/null; then
-  wget -O /etc/repos.d/jenkins.repo https://pkg.jenkins.io/rpm/jenkins.repo
+  wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/rpm/jenkins.repo
   yum install -y jenkins
 fi
 
