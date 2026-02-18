@@ -1,0 +1,111 @@
+#brew tag-pkg fast-datapath-rhel-8-candidate ovn2.11-2.11.1-46.el8fdp
+#brew tag-pkg fast-datapath-rhel-8 ovn2.11-2.11.1-46.el8fdp
+#brew call signBuild ovn2.11-2.11.1-46.el8fdp beta2
+#brew tag-pkg fast-datapath-rhel-8-hotfix ovn2.13-20.12.0-115.el8fdp
+#brew tag-pkg fast-datapath-rhel-8-candidate-hotfix ovn2.13-20.12.0-115.el8fdp
+#brew call signBuild ovn2.13-20.12.0-115.el8fdp beta2
+
+#openstack-cinder-15.1.1-0.20200403213515.cfa2d1b.el8ost
+#echo openstack-neutron-12.1.0-9.el7ost
+#echo path = http://download.eng.bos.redhat.com/brewroot/packages/openstack-nova/17.0.12/12.el7ost/data/signed/f21541eb/noarch/
+#echo path = https://download-01.beak-001.prod.iad2.dc.redhat.com/brewroot/vol/rhel-9/packages/openstack-tripleo-heat-templates/14.3.1/17.1.20240506130810.e7c7ce3.el9osttrunk/data/signed/f21541eb/noarch/
+
+#brew tag-pkg rhos-16.0-rhel-8-hotfix openstack-ironic-13.0.7-1.20201114020439.el8ost
+#brew call signBuild openstack-ironic-13.0.7-1.20201114020439.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-octavia-5.0.3-1.20201114024053.el8ost
+#brew call signBuild openstack-octavia-5.0.3-1.20201114024053.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-barbican-9.0.1-1.20210310093023.el8ost
+#brew call signBuild openstack-barbican-9.0.1-1.20210310093023.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-pyroute2-0.5.6-2.el8osttrunk
+#brew call signBuild python-pyroute2-0.5.6-2.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-networking-ovn-7.3.1-1.20201114024056.el8ost
+#brew call signBuild python-networking-ovn-7.3.1-1.20201114024056.el8ost beta2
+
+#brew tag-pkg fast-datapath-rhel-8-candidate ovn2.13-20.12.0-1.el8fdp
+#brew call signBuild ovn2.13-20.12.0-1.el8fdp beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-nova-20.4.1-1.20200917173451.el8ost
+#brew call signBuild openstack-nova-20.4.1-1.20200917173451.el8ost beta2
+#
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-cinder-15.3.1-1.20200915213430.8181c4b.el8ost
+#brew call signBuild openstack-cinder-15.3.1-1.20200915213430.8181c4b.el8ost beta2
+
+#brew tag-pkg rhos-16.0-rhel-8-hotfix python-paunch-5.3.3-1.20200826193407.ed2c015.el8ost
+#brew call signBuild python-paunch-5.3.3-1.20200826193407.ed2c015.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-tripleoclient-12.3.2-1.20200914164930.rhbz1974985.el8ost
+#brew call signBuild python-tripleoclient-12.3.2-1.20200914164930.rhbz1974985.el8ost beta2
+#
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-tripleo-common-11.4.1-1.20200917023445.rhbz1974985.el8ost
+#brew call signBuild openstack-tripleo-common-11.4.1-1.20200917023445.rhbz1974985.el8ost beta2
+#
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-tripleo-heat-templates-11.3.2-1.20200914170177.rhbz1974985.el8ost
+#brew call signBuild openstack-tripleo-heat-templates-11.3.2-1.20200914170177.rhbz1974985.el8ost beta2
+#
+#brew tag-pkg rhos-16.1-rhel-8-hotfix tripleo-ansible-0.5.1-1.20200914163930.rhbz1974985.el8ost
+#brew call signBuild tripleo-ansible-0.5.1-1.20200914163930.rhbz1974985.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-nova-20.4.1-1.20210708183304.1ee93b9.el8ost
+#brew call signBuild openstack-nova-20.4.1-1.20210708183304.1ee93b9.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-octavia-5.0.3-1.20210712123304.8c32d2e.el8ost
+#brew call signBuild openstack-octavia-5.0.3-1.20210712123304.8c32d2e.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-neutron-15.2.1-1.20210908073306.40d217c.el8ost
+#brew call signBuild openstack-neutron-15.2.1-1.20210908073306.40d217c.el8ost beta2
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-neutron-15.3.5-2.20210608154816.el8ost.4
+#brew call signBuild  openstack-cinder-15.4.0-1.20211012043360.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-cinder-15.4.0-1.20211012043360.el8ost
+#brew call signBuild  openstack-cinder-15.4.0-1.20211012043360.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-glance-store-1.0.2-1.20211224163346.el8ost
+#brew call signBuild  python-glance-store-1.0.2-1.20211224163346.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-nova-20.4.1-1.20220112153422.1ee93b9.el8ost
+#brew call signBuild  openstack-nova-20.4.1-1.20220112153422.1ee93b9.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-neutron-15.2.1-1.20220120083333.40d217c.el8ost
+#brew call signBuild openstack-neutron-15.2.1-1.20220120083333.40d217c.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-django-horizon-16.2.1-1.20210728213306.el8ost
+#brew call signBuild python-django-horizon-16.2.1-1.20210728213306.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-cinder-15.6.1-2.20230117204940.9f9194d.el8osttrunk
+#brew call signBuild openstack-cinder-15.6.1-2.20230117204940.9f9194d.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-nova-20.6.2-2.20230127124927.20a8dce.el8osttrunk
+#brew call signBuild openstack-nova-20.6.2-2.20230127124927.20a8dce.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-nova-20.6.2-2.20230308185148.fc01371.el8ost
+#brew call signBuild openstack-nova-20.6.2-2.20230308185148.fc01371.el8ost beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-cinder-15.6.1-2.20230831135024.299553a.el8osttrunk
+#brew call signBuild openstack-cinder-15.6.1-2.20230831135024.299553a.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-cinder-15.6.1-2.20230906144854.299553a.el8ost
+#brew call signBuild openstack-cinder-15.6.1-2.20230906144854.299553a.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-neutron-15.2.1-1.20230223123406.el8ost
+#brew call signBuild openstack-neutron-15.2.1-1.20230223123406.el8ost beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix openstack-tripleo-heat-templates-14.3.1-17.1.20240506130810.e7c7ce3.el9osttrunk
+#brew call signBuild openstack-tripleo-heat-templates-14.3.1-17.1.20240506130810.e7c7ce3.el9osttrunk beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix 	openstack-cinder-18.2.2-17.1.20241028160822.f6b44fc.el9osttrunk
+#brew call signBuild openstack-cinder-18.2.2-17.1.20241028160822.f6b44fc.el9osttrunk beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix 	openstack-nova-23.2.3-17.1.20240919170759.hf1.el9ost
+#brew call signBuild openstack-nova-23.2.3-17.1.20240919170759.hf1.el9ost beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix openstack-barbican-12.0.3-17.1.20250603070901.6ee5ad9.el9osttrunk
+#brew call signBuild openstack-barbican-12.0.3-17.1.20250603070901.6ee5ad9.el9osttrunk beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix openstack-tripleo-common-15.4.1-17.1.20250527161411.e5b18f2.el9osttrunk
+#brew call signBuild openstack-tripleo-common-15.4.1-17.1.20250527161411.e5b18f2.el9osttrunk beta2
+
+#brew tag-pkg rhos-17.1-rhel-9-hotfix ansible-role-lunasa-hsm-1.1.1-17.1.20250603180833.5b8127c.el9osttrunk
+#brew call signBuild ansible-role-lunasa-hsm-1.1.1-17.1.20250603180833.5b8127c.el9osttrunk beta2
+
+brew tag-pkg fast-datapath-rhel-9-hotfix openvswitch3.3-3.3.5-131.el9fdp
+brew call signBuild openvswitch3.3-3.3.5-131.el9fdp beta2
