@@ -24,19 +24,20 @@ systemctl enable shairport-sync
 systemctl start shairport-sync
 systemctl restart libvirtd
 
-
-firewall-cmd --zone=internal --add-service ssh --permanent
-firewall-cmd --zone=FedoraWorkstation --add-service ssh --permanent
-firewall-cmd --zone=internal --add-service snmp --permanent
-firewall-cmd --zone=FedoraWorkstation --add-service snmp --permanent
-firewall-cmd --zone=internal --add-port=113/tcp --permanent
-firewall-cmd --zone=FedoraWorkstation --add-port=113/tcp --permanent
-firewall-cmd --zone=internal --add-port=161/tcp --permanent
-firewall-cmd --zone=FedoraWorkstation --add-port=161/tcp --permanent
-firewall-cmd --zone=FedoraServer --add-port=161/tcp --permanent
-firewall-cmd --zone=internal --add-port=161/udp --permanent
-firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
-firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
+if ! firewall-cmd --zone=internal --permanent --list-all | grep -q snmp; then
+  firewall-cmd --zone=internal --add-service ssh --permanent
+  firewall-cmd --zone=FedoraWorkstation --add-service ssh --permanent
+  firewall-cmd --zone=internal --add-service snmp --permanent
+  firewall-cmd --zone=FedoraWorkstation --add-service snmp --permanent
+  firewall-cmd --zone=internal --add-port=113/tcp --permanent
+  firewall-cmd --zone=FedoraWorkstation --add-port=113/tcp --permanent
+  firewall-cmd --zone=internal --add-port=161/tcp --permanent
+  firewall-cmd --zone=FedoraWorkstation --add-port=161/tcp --permanent
+  firewall-cmd --zone=FedoraServer --add-port=161/tcp --permanent
+  firewall-cmd --zone=internal --add-port=161/udp --permanent
+  firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
+  firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
+fi
 
 if ! snap info whatsdesk >/dev/null; then
   snap install whatsdesk
