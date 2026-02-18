@@ -1,8 +1,8 @@
-timedatectl set-timezone America/Montreal
-hostnamectl set-hostname moriarty.orion
+sudo timedatectl set-timezone America/Montreal
+sudo hostnamectl set-hostname moriarty.orion
 
-sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
-sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
+sudo sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
+sudo sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
 dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 
