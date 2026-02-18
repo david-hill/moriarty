@@ -43,13 +43,15 @@ cp /var/lib/snapd/snap/whatsdesk/current/meta/gui/icon.png /usr/share/pixmaps/wh
 cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp.desktop
 cp usr/share/applications/whatsapp.desktop /home/dhill/.config/autostart
 
-cd rpms
-mkdir tmp
-cp linux-brprinter-installer-2.2.0-1.gz tmp/
-gunzip -c linux-brprinter-installer-2.2.0-1.gz > tmp/linux-brprinter-installer-2.2.0-1
-chmod 755 tmp/linux-brprinter-installer-2.2.0-1
-echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
-rm -rf tmp
+if ! rpm -qi brscan3 > /dev/null; then
+  cd rpms
+  mkdir tmp
+  cp linux-brprinter-installer-2.2.0-1.gz tmp/
+  gunzip -c linux-brprinter-installer-2.2.0-1.gz > tmp/linux-brprinter-installer-2.2.0-1
+  chmod 755 tmp/linux-brprinter-installer-2.2.0-1
+  echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
+  rm -rf tmp
+
 
 if ! rpm -qa | grep -q zoom ; then
   sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
