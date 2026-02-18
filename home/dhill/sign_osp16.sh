@@ -61,5 +61,32 @@
 #brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-cinder-15.4.0-1.20211012043360.el8ost
 #brew call signBuild  openstack-cinder-15.4.0-1.20211012043360.el8ost beta2
 
-brew tag-pkg rhos-16.1-rhel-8-hotfix python-glance-store-1.0.2-1.20211224163346.el8ost
-brew call signBuild  python-glance-store-1.0.2-1.20211224163346.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-glance-store-1.0.2-1.20211224163346.el8ost
+#brew call signBuild  python-glance-store-1.0.2-1.20211224163346.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-nova-20.4.1-1.20220112153422.1ee93b9.el8ost
+#brew call signBuild  openstack-nova-20.4.1-1.20220112153422.1ee93b9.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-neutron-15.2.1-1.20220120083333.40d217c.el8ost
+#brew call signBuild openstack-neutron-15.2.1-1.20220120083333.40d217c.el8ost beta2
+#brew tag-pkg rhos-16.1-rhel-8-hotfix python-django-horizon-16.2.1-1.20210728213306.el8ost
+#brew call signBuild python-django-horizon-16.2.1-1.20210728213306.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-cinder-15.6.1-2.20230117204940.9f9194d.el8osttrunk
+#brew call signBuild openstack-cinder-15.6.1-2.20230117204940.9f9194d.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-nova-20.6.2-2.20230127124927.20a8dce.el8osttrunk
+#brew call signBuild openstack-nova-20.6.2-2.20230127124927.20a8dce.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-nova-20.6.2-2.20230308185148.fc01371.el8ost
+#brew call signBuild openstack-nova-20.6.2-2.20230308185148.fc01371.el8ost beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-cinder-15.6.1-2.20230831135024.299553a.el8osttrunk
+#brew call signBuild openstack-cinder-15.6.1-2.20230831135024.299553a.el8osttrunk beta2
+
+#brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-cinder-15.6.1-2.20230906144854.299553a.el8ost
+#brew call signBuild openstack-cinder-15.6.1-2.20230906144854.299553a.el8ost beta2
+
+brew tag-pkg rhos-16.2-rhel-8-hotfix openstack-keystone-16.0.3-2.20230826184851.9d699a7.hf1.el8ost
+brew call signBuild openstack-keystone-16.0.3-2.20230826184851.9d699a7.hf1.el8ost beta2
+
+#brew tag-pkg rhos-16.1-rhel-8-hotfix openstack-neutron-15.2.1-1.20230223123406.el8ost
+#brew call signBuild openstack-neutron-15.2.1-1.20230223123406.el8ost beta2
