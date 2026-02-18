@@ -52,7 +52,7 @@ if ! rpm -qi brscan3 > /dev/null; then
   chmod 755 tmp/linux-brprinter-installer-2.2.0-1
   echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
   rm -rf tmp
-
+fi
 
 if ! rpm -qa | grep -q zoom ; then
   sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
