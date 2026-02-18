@@ -36,8 +36,9 @@ firewall-cmd --zone=internal --add-port=161/udp --permanent
 firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
 firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
 
-
-snap install whatsdesk
+if ! snap info whatsdesk >/dev/null; then
+  snap install whatsdesk
+fi
 
 cp /var/lib/snapd/snap/whatsdesk/current/meta/gui/icon.png /usr/share/pixmaps/whatsapp.png
 cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp.desktop
