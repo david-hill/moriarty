@@ -10,6 +10,8 @@ if ! rpm -qi virt-manager > /dev/null; then
   sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager
 fi
 if [ -d /home/dhill_restore ]; then
+  rsync -avgo --remove-source-files /home/dhill_restore/cases/ /cases/
+  rm -rf /home/dhill_restore/cases/
   rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
   find /home/dhill_restore/ -depth -type d -empty -delete
 fi
