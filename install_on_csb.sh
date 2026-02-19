@@ -67,7 +67,7 @@ if ! rpm -qi brscan3 > /dev/null; then
 fi
 
 if ! rpm -qa | grep -iq slack ; then
-  sudo yum install -y rpms/slack*
+  sudo rpm -i rpms/slack*
 fi
 
 if ! rpm -qa | grep -iq zoom ; then
