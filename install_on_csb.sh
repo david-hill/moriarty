@@ -48,6 +48,9 @@ fi
 if ! snap info whatsdesk >/dev/null; then
   sudo snap install whatsdesk
 fi
+if ! snap info signal-desktop >/dev/null; then
+  sudo snap install signal-desktop
+fi
 
 sudo cp /var/lib/snapd/snap/whatsdesk/current/meta/gui/icon.png /usr/share/pixmaps/whatsapp.png
 sudo cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp.desktop
