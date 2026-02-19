@@ -92,7 +92,8 @@ if ! rpm -qi jenkins > /dev/null; then
   sudo yum install -y jenkins
 fi
 
-sudo tar xvf /home/dhill/jenkins.tar -C /var/lib/jenkins
+sudo tar xvf /home/dhill/jenkins.tar -C /
+sudo tar xvf /home/dhill/libvirt.tar -C /
 sudo yum update -y
 
 if [ ! -e restarted_gdm ]; then
