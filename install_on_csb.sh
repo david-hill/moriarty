@@ -20,10 +20,13 @@ if [ -d /home/dhill_restore ]; then
   fi
 fi
 
-sudo cp etc/gdm/* /etc/gdm/
 sudo cp etc/snmp/* /etc/snmp/
 sudo cp etc/libvirt/libvirtd.conf /etc/libvirt
-sudo cp var/lib/AccountsService/users/* /var/lib/AccountsService/users
+release=$(cat /etc/redhat-release | sed -e 's/.* \([0-9]*\) .*\1/')
+if [[ $release -le 42 ]]; then
+  sudo cp var/lib/AccountsService/users/* /var/lib/AccountsService/users
+  sudo cp etc/gdm/* /etc/gdm/
+fi
 
 sudo systemctl enable snapd
 sudo systemctl start snapd
