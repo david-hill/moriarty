@@ -62,6 +62,10 @@ if ! rpm -qi brscan3 > /dev/null; then
   rm -rf tmp
 fi
 
+if ! rpm -qa | grep -iq slack ; then
+  sudo yum install -y rpms/slack*
+fi
+
 if ! rpm -qa | grep -iq zoom ; then
   sudo yum install -y https://zoom.us/client/latest/zoom_x86_64.rpm
 fi
