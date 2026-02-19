@@ -6,8 +6,8 @@ sudo sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/h
 
 dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 
-if ! rpm -qi virt-manager > /dev/null; then
-  sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager
+if ! rpm -qi gnome-session-xsession > /dev/null; then
+  sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession
 fi
 if [ -d /home/dhill_restore ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/cases/ /cases/
@@ -19,6 +19,7 @@ fi
 sudo cp etc/gdm/* /etc/gdm/
 sudo cp etc/snmp/* /etc/snmp/
 sudo cp etc/libvirt/libvirtd.conf /etc/libvirt
+sudo cp var/lib/AccountsService/users/* /var/lib/AccountsService/users
 
 sudo systemctl enable snapd
 sudo systemctl start snapd
