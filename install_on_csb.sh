@@ -63,11 +63,15 @@ sudo cp usr/share/applications/whatsapp.desktop /usr/share/applications/whatsapp
 sudo cp usr/share/applications/whatsapp.desktop /home/dhill/.config/autostart
 
 if ! rpm -qi brscan3 > /dev/null; then
+  file=linux-brprinter-installer-2.2.3-1.gz
   cd rpms
   mkdir tmp
-  gunzip -c linux-brprinter-installer-2.2.0-1.gz > tmp/linux-brprinter-installer-2.2.0-1
-  chmod 755 tmp/linux-brprinter-installer-2.2.0-1
-  echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
+  gunzip -c $file > tmp/linux-brprinter-installer
+  if [[ $release -gt 42 ]]; then
+    sed -i "s/PKGCMD='rpm  -ihv  --nodeps  --replacefiles --replacepkgs'/PKGCMD='rpm  -ihv  --nodeps  --replacefiles --replacepkgs --nodigest --nofiledigest'/" tmp/linux-brprinter-installer
+  fi
+  chmod 755 tmp/linux-brprinter-installer
+  echo "Y" | sudo tmp/./linux-brprinter-installer dcp-7030
   rm -rf tmp
   cd ..
 fi
