@@ -15,6 +15,9 @@ if [ -d /home/dhill_restore ]; then
   rm -rf /home/dhill_restore/cases/
   rsync -avgo --remove-source-files /home/dhill_restore/home/dhill/ /home/dhill/
   find /home/dhill_restore/ -depth -type d -empty -delete
+  if [ -e rebooted ]; then
+    rm rebooted
+  fi
 fi
 
 sudo cp etc/gdm/* /etc/gdm/
@@ -96,9 +99,9 @@ sudo tar xvf /home/dhill/jenkins.tar -C /
 sudo tar xvf /home/dhill/libvirt.tar -C /
 sudo yum update -y
 
-if [ ! -e restarted_gdm ]; then
-  touch restarted_gdm
+if [ ! -e rebooted ]; then
+  touch rebooted
   echo "bye bye wayland"
-  sudo systemctl restart gdm
+  reboot
 fi
 
