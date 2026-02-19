@@ -8,7 +8,7 @@ dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Montreal', 'CYUL', true, [(0.79354303905785273, -1.2871803233458181)], [(0.79354303905785273, -1.2871803233458181)])>)>]"
 
 if ! rpm -qi gnome-session-xsession > /dev/null; then
-  sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession
+  sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession
 fi
 if [ -d /home/dhill_restore ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/cases/ /cases/
