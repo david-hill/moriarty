@@ -1,6 +1,11 @@
 sudo timedatectl set-timezone America/Montreal
 sudo hostnamectl set-hostname moriarty.orion
 
+if [ ! -d /home/dhill_restore ]; then
+  sudo mkdir /home/dhill_restore
+  sudo chown dhill /home/dhill_restore
+fi
+
 sudo sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts.d/csb.fact
 sudo sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
