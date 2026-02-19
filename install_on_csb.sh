@@ -5,6 +5,7 @@ sudo sed -i 's/csb_hostname.*/csb_hostname = moriarty.orion/' /etc/ansible/facts
 sudo sed -i 's/^dhill.*/moriarty.orion ansible_connection=local/' /etc/ansible/hosts
 
 dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
+dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Montreal', 'CYUL', true, [(0.79354303905785273, -1.2871803233458181)], [(0.79354303905785273, -1.2871803233458181)])>)>]"
 
 if ! rpm -qi gnome-session-xsession > /dev/null; then
   sudo yum install -y terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession
