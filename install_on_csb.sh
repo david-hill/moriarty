@@ -84,3 +84,6 @@ if ! rpm -qi jenkins > /dev/null; then
   sudo yum install -y jenkins
 fi
 
+sudo yum update -y
+sudo systemctl restart gdm
+
