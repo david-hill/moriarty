@@ -59,11 +59,11 @@ sudo cp usr/share/applications/whatsapp.desktop /home/dhill/.config/autostart
 if ! rpm -qi brscan3 > /dev/null; then
   cd rpms
   mkdir tmp
-  cp linux-brprinter-installer-2.2.0-1.gz tmp/
   gunzip -c linux-brprinter-installer-2.2.0-1.gz > tmp/linux-brprinter-installer-2.2.0-1
   chmod 755 tmp/linux-brprinter-installer-2.2.0-1
   echo "Y" | sudo tmp/./linux-brprinter-installer-2.2.0-1 dcp-7030
   rm -rf tmp
+  cd ..
 fi
 
 if ! rpm -qa | grep -iq slack ; then
