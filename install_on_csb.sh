@@ -45,10 +45,10 @@ if ! firewall-cmd --zone=internal --permanent --list-all | grep -q snmp; then
   sudo firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
 fi
 
-if ! snap info whatsdesk >/dev/null; then
+if ! snap list whatsdesk >/dev/null; then
   sudo snap install whatsdesk
 fi
-if ! snap info signal-desktop >/dev/null; then
+if ! snap list signal-desktop >/dev/null; then
   sudo snap install signal-desktop
 fi
 
