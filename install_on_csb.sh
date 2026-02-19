@@ -22,7 +22,7 @@ fi
 
 sudo cp etc/snmp/* /etc/snmp/
 sudo cp etc/libvirt/libvirtd.conf /etc/libvirt
-release=$(cat /etc/redhat-release | sed -e 's/.* \([0-9]*\) .*\1/')
+release=$(cat /etc/redhat-release | sed -e 's/.* \([0-9]*\) .*/\1/')
 if [[ $release -le 42 ]]; then
   sudo cp var/lib/AccountsService/users/* /var/lib/AccountsService/users
   sudo cp etc/gdm/* /etc/gdm/
