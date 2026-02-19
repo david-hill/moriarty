@@ -109,7 +109,9 @@ if [ -e /home/dhill/libvirt.tar ]; then
   sudo tar xvf /home/dhill/libvirt.tar -C /
 fi
 
-sudo yum update -y
+if ! yum -q check-update > /dev/null; then
+  sudo yum update -y
+fi
 
 if [ ! -e rebooted ]; then
   touch rebooted
