@@ -84,6 +84,7 @@ if ! rpm -qi jenkins > /dev/null; then
   sudo yum install -y jenkins
 fi
 
+sudo tar xvf /home/dhill/jenkins.tar -C /var/lib/jenkins
 sudo yum update -y
 sudo systemctl restart gdm
 
