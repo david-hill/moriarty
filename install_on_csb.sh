@@ -12,7 +12,7 @@ fi
 if [ -d /home/dhill_restore ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/cases/ /cases/
   rm -rf /home/dhill_restore/cases/
-  rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
+  rsync -avgo --remove-source-files /home/dhill_restore/home/dhill/ /home/dhill/
   find /home/dhill_restore/ -depth -type d -empty -delete
 fi
 
