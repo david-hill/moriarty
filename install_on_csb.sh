@@ -94,5 +94,10 @@ fi
 
 sudo tar xvf /home/dhill/jenkins.tar -C /var/lib/jenkins
 sudo yum update -y
-sudo systemctl restart gdm
+
+if [ ! -e restarted_gdm ]; then
+  touch restarted_gdm
+  echo "bye bye wayland"
+  sudo systemctl restart gdm
+fi
 
