@@ -15,11 +15,9 @@ dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Montreal', 'CYUL', tru
 if ! rpm -qi virt-manager > /dev/null; then
   sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession
 fi
-if [ -d /home/dhill_restore ]; then
-  rsync -avgo --remove-source-files /home/dhill_restore/cases/ /cases/
-  rm -rf /home/dhill_restore/cases/
+if [ -d /home/dhill_restore/home/dhill/Documents ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/home/dhill/ /home/dhill/
-  find /home/dhill_restore/ -depth -type d -empty -delete
+  sudo find /home/dhill_restore/ -depth -type d -empty -delete
   if [ -e rebooted ]; then
     rm rebooted
   fi
