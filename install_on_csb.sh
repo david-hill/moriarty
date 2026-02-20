@@ -115,6 +115,10 @@ if [ -e /home/dhill/libvirt.tar ]; then
   sudo tar xvf /home/dhill/libvirt.tar -C /
   sudo rm -f /home/dhill/libvirt.tar
 fi
+if [ -e /home/dhill/cases.tar ]; then
+  sudo tar xvf /home/dhill/cases.tar -C /
+  sudo rm -f /home/dhill/cases.tar
+fi
 
 if ! yum -q check-update > /dev/null; then
   sudo yum update -y
