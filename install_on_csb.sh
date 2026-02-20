@@ -109,9 +109,11 @@ fi
 
 if [ -e /home/dhill/jenkins.tar ]; then
   sudo tar xvf /home/dhill/jenkins.tar -C /
+  sudo rm -f /home/dhill/jenkins.tar
 fi
 if [ -e /home/dhill/libvirt.tar ]; then
   sudo tar xvf /home/dhill/libvirt.tar -C /
+  sudo rm -f /home/dhill/libvirt.tar
 fi
 
 if ! yum -q check-update > /dev/null; then
