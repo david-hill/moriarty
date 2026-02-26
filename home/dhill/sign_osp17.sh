@@ -107,5 +107,8 @@
 #brew tag-pkg rhos-17.1-rhel-9-hotfix ansible-role-lunasa-hsm-1.1.1-17.1.20250603180833.5b8127c.el9osttrunk
 #brew call signBuild ansible-role-lunasa-hsm-1.1.1-17.1.20250603180833.5b8127c.el9osttrunk beta2
 
-brew tag-pkg fast-datapath-rhel-9-hotfix openvswitch3.3-3.3.5-131.el9fdp
-brew call signBuild openvswitch3.3-3.3.5-131.el9fdp beta2
+#brew tag-pkg fast-datapath-rhel-9-hotfix openvswitch3.3-3.3.5-131.el9fdp
+#brew call signBuild openvswitch3.3-3.3.5-131.el9fdp beta2
+
+brew tag-pkg rhos-17.1-rhel-9-hotfix python-glance-store-2.5.1-17.1.20260225150839.5f1cee6.el9osttrunk
+brew call signBuild python-glance-store-2.5.1-17.1.20260225150839.5f1cee6.el9osttrunk beta2
