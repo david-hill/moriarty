@@ -13,14 +13,11 @@ dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Montreal', 'CYUL', true, [(0.79354303905785273, -1.2871803233458181)], [(0.79354303905785273, -1.2871803233458181)])>)>]"
 
 if ! rpm -qi virt-manager > /dev/null; then
-  sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession openshift-clients
+  sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession openshift-clients chromium
 fi
 if [ -d /home/dhill_restore/Documents ]; then
   rsync -avgo --remove-source-files /home/dhill_restore/ /home/dhill/
   sudo find /home/dhill_restore/ -depth -type d -empty -delete
-  if [ -e rebooted ]; then
-    rm rebooted
-  fi
 fi
 
 flatpak install anydesk
@@ -130,3 +127,9 @@ if [ ! -e rebooted ]; then
   reboot
 fi
 
+
+
+if [[ $(hostname) == moriarty.orion ]] && [ ! -e .restored ]; then
+  deja-dup
+  touch .restored
+fi
