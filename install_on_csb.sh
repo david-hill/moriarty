@@ -13,7 +13,7 @@ dconf write /org/gnome/deja-dup/google/folder "'moriarty.orion'"
 dconf write /org/gnome/Weather/locations "[<(uint32 2, <('Montreal', 'CYUL', true, [(0.79354303905785273, -1.2871803233458181)], [(0.79354303905785273, -1.2871803233458181)])>)>]"
 
 if ! rpm -qi vim > /dev/null; then
-  sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession openshift-clients chromium strace runc
+  sudo yum install -y --skip-unavailable terminator vim snap shairport-sync vlc thunderbird net-snmp google-chrome-unstable gnome-classic-session git-lfs hexchat psutils glibc.i686 virt-manager gnome-session-xsession openshift-clients chromium strace runc rhpkg
 fi
 
 flatpak install anydesk
