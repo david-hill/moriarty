@@ -34,7 +34,7 @@ sudo systemctl enable shairport-sync
 sudo systemctl start shairport-sync
 sudo systemctl restart libvirtd
 
-if ! firewall-cmd --zone=internal --permanent --list-all | grep -q snmp; then
+if ! firewall-cmd --zone=FedoraWorkstation --permanent --list-all | grep -q snmp; then
   sudo firewall-cmd --zone=internal --add-service ssh --permanent
   sudo firewall-cmd --zone=FedoraWorkstation --add-service ssh --permanent
   sudo firewall-cmd --zone=internal --add-service snmp --permanent
@@ -47,6 +47,7 @@ if ! firewall-cmd --zone=internal --permanent --list-all | grep -q snmp; then
   sudo firewall-cmd --zone=internal --add-port=161/udp --permanent
   sudo firewall-cmd --zone=FedoraWorkstation --add-port=161/udp --permanent
   sudo firewall-cmd --zone=FedoraServer --add-port=161/udp --permanent
+  sudo firewall-cmd --reload
 fi
 
 if ! snap list whatsie >/dev/null; then
@@ -123,7 +124,7 @@ if [ ! -e rebooted ]; then
   reboot
 fi
 
-
+sudo sed -i 's/PermitRootLogin .*/PermitRootLogin prohibit-password/' /etc/ssh/sshd_config.d/99-csb-remote-access.conf
 
 if [[ $(hostname) == moriarty.orion ]] && [ ! -e .restored ]; then
   deja-dup
